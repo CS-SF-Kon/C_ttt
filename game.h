@@ -4,13 +4,8 @@
 #define BOARD_SIZE 3
 #define PLAYER_X 'X'
 #define PLAYER_O 'O'
-
-enum cell_state
-{
-    CLEAR,
-    X,
-    O
-};
+#define EMPTY_CELL '_'
+#define MAX_POSITION (BOARD_SIZE * BOARD_SIZE)
 
 enum game_state
 {
@@ -26,6 +21,4 @@ void printBoard(const char board[BOARD_SIZE][BOARD_SIZE]);
 
 int makeMove(char board[BOARD_SIZE][BOARD_SIZE], int position, char currentPlayer);
 
-int checkWin(const char board[BOARD_SIZE][BOARD_SIZE]);
-
-int isBoardFull(const char board[BOARD_SIZE][BOARD_SIZE]);
+enum game_state checkWin(const char board[BOARD_SIZE][BOARD_SIZE]);
